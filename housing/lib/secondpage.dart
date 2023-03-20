@@ -209,6 +209,7 @@ class _SecondPageState extends State<SecondPage> {
                 child: Stack(
                   children: [
                     Container(
+                      height: double.infinity,
                       width: double.infinity,
                       child: Image(
                         fit: BoxFit.cover,
