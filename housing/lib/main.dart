@@ -272,7 +272,7 @@ class _housingState extends State<housing> {
                   SizedBox(
                     height: 40,
                     child: ListView.builder(
-                      padding: EdgeInsets.fromLTRB(20, 0, 10, 0),
+                      padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                       itemCount: constraints.length,
                       physics: BouncingScrollPhysics(
                           decelerationRate: ScrollDecelerationRate.fast),
