@@ -272,6 +272,7 @@ class _housingState extends State<housing> {
                   SizedBox(
                     height: 40,
                     child: ListView.builder(
+                      padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
                       itemCount: constraints.length,
                       physics: BouncingScrollPhysics(
                           decelerationRate: ScrollDecelerationRate.fast),
@@ -401,13 +402,18 @@ class _PlotListingState extends State<PlotListing> {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
-                child: Image(
-                  image: NetworkImage(widget.urllink),
+                child: Container(
+                  height: 180,
+                  width: double.infinity,
+                  child: Image(
+                    fit: BoxFit.cover,
+                    image: NetworkImage(widget.urllink),
+                  ),
                 ),
               ),
               Positioned(
-                top: 20,
-                right: 20,
+                top: 15,
+                right: 15,
                 child: Material(
                   clipBehavior: Clip.hardEdge,
                   borderRadius: BorderRadius.circular(15),
@@ -470,10 +476,15 @@ class _PlotListingState extends State<PlotListing> {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                widget.specs,
-                style: TextStyle(
-                    color: Color.fromARGB(255, 13, 13, 23), fontSize: 16),
+              Expanded(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Text(
+                    widget.specs,
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 13, 13, 23), fontSize: 16),
+                  ),
+                ),
               ),
             ],
           ),

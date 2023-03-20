@@ -202,64 +202,72 @@ class _SecondPageState extends State<SecondPage> {
       body: Builder(builder: (context) {
         return Column(
           children: [
-            Stack(
-              children: [
-                Image(
-                  image: NetworkImage(
-                    houses[int.parse(widget.name)]['image'],
-                  ),
-                ),
-                Positioned(
-                  left: 20,
-                  top: 40,
-                  child: Material(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      side: BorderSide(
-                        width: 0.8,
-                        color: Color.fromARGB(255, 255, 255, 255),
-                      ),
-                    ),
-                    clipBehavior: Clip.hardEdge,
-                    color: Color.fromARGB(0, 255, 255, 255),
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: HeroIcon(
-                        HeroIcons.arrowUturnLeft,
-                        size: 25,
-                        color: Color.fromARGB(255, 255, 255, 242),
-                        style: HeroIconStyle.outline,
+            Container(
+              width: double.infinity,
+              height: 250,
+              child: Stack(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    child: Image(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(
+                        houses[int.parse(widget.name)]['image'],
                       ),
                     ),
                   ),
-                ),
-                Positioned(
-                  right: 20,
-                  top: 40,
-                  child: Material(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      side: BorderSide(
-                        width: 0.8,
-                        color: Color.fromARGB(255, 255, 255, 255),
+                  Positioned(
+                    left: 20,
+                    top: 40,
+                    child: Material(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        side: BorderSide(
+                          width: 0.8,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                        ),
                       ),
-                    ),
-                    clipBehavior: Clip.hardEdge,
-                    color: Color.fromARGB(0, 255, 255, 255),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: HeroIcon(
-                        HeroIcons.heart,
-                        size: 25,
-                        color: Color.fromARGB(255, 255, 255, 242),
-                        style: HeroIconStyle.outline,
+                      clipBehavior: Clip.hardEdge,
+                      color: Color.fromARGB(0, 255, 255, 255),
+                      child: IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: HeroIcon(
+                          HeroIcons.arrowUturnLeft,
+                          size: 25,
+                          color: Color.fromARGB(255, 255, 255, 242),
+                          style: HeroIconStyle.outline,
+                        ),
                       ),
                     ),
                   ),
-                )
-              ],
+                  Positioned(
+                    right: 20,
+                    top: 40,
+                    child: Material(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        side: BorderSide(
+                          width: 0.8,
+                          color: Color.fromARGB(255, 255, 255, 255),
+                        ),
+                      ),
+                      clipBehavior: Clip.hardEdge,
+                      color: Color.fromARGB(0, 255, 255, 255),
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: HeroIcon(
+                          HeroIcons.heart,
+                          size: 25,
+                          color: Color.fromARGB(255, 255, 255, 242),
+                          style: HeroIconStyle.outline,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
             SizedBox(
               height: 20,
@@ -332,7 +340,7 @@ class _SecondPageState extends State<SecondPage> {
               ),
             ),
             SizedBox(
-              height: 95,
+              height: 100,
               child: ListView(
                 physics: BouncingScrollPhysics(
                     decelerationRate: ScrollDecelerationRate.fast),
