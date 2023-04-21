@@ -111,8 +111,9 @@ class _housingState extends State<housing> {
                         Text(
                           'City',
                           style: TextStyle(
-                              fontSize: 15,
-                              color: Color.fromARGB(128, 23, 23, 40)),
+                            fontSize: 15,
+                            color: Color.fromARGB(128, 23, 23, 40),
+                          ),
                         ),
                         SizedBox(height: 10),
                         Text(
